@@ -68,5 +68,33 @@ namespace MaterialSkin_TestApp
         private void frmMain_KeyDown(object sender, KeyEventArgs e)
         {
         }
+
+        private void sliderAutoCloseInterval_onValueChanged(object sender, int newValue)
+        {
+            if (sliderAutoCloseInterval.Value > 0)
+            {
+                tmr_HideForm.Enabled = false;
+                tmr_HideForm.Interval = sliderAutoCloseInterval.Value * 1000;
+                tmr_HideForm.Enabled = true;
+            }
+            else
+            {
+                tmr_HideForm.Enabled = false;
+            }
+        }
+
+        private void btnCopyNotes_Click(object sender, EventArgs e)
+        {
+            string Notes = edtNotes.Text;
+            Clipboard.SetText(Notes);
+        }
+
+        private void edtNotes_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                edtNotes.AppendText(edtLinePrefix.Text.ToString());
+            }
+        }
     }
 }
