@@ -96,5 +96,10 @@ namespace MaterialSkin_TestApp
                 edtNotes.AppendText(edtLinePrefix.Text.ToString());
             }
         }
+
+        private void tabselector_Options_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

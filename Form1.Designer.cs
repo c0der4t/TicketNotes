@@ -94,6 +94,7 @@ namespace MaterialSkin_TestApp
             this.btnCopyNotes.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.btnCopyNotes.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnCopyNotes.Name = "btnCopyNotes";
+            this.btnCopyNotes.NoAccentTextColor = System.Drawing.Color.Empty;
             this.btnCopyNotes.Size = new System.Drawing.Size(137, 19);
             this.btnCopyNotes.TabIndex = 2;
             this.btnCopyNotes.Text = "COPY NOTES";
@@ -182,6 +183,7 @@ namespace MaterialSkin_TestApp
             this.materialSwitch1.TabIndex = 4;
             this.materialSwitch1.Text = "Estimate Time";
             this.materialSwitch1.UseVisualStyleBackColor = false;
+            this.materialSwitch1.Visible = false;
             // 
             // switchAutoSaveNotes
             // 
@@ -199,6 +201,7 @@ namespace MaterialSkin_TestApp
             this.switchAutoSaveNotes.TabIndex = 3;
             this.switchAutoSaveNotes.Text = "Autosave";
             this.switchAutoSaveNotes.UseVisualStyleBackColor = false;
+            this.switchAutoSaveNotes.Visible = false;
             // 
             // sliderAutoCloseInterval
             // 
@@ -237,6 +240,7 @@ namespace MaterialSkin_TestApp
             this.tabselector_Options.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tabselector_Options.BaseTabControl = this.materialTabControl1;
+            this.tabselector_Options.CharacterCasing = MaterialSkin.Controls.MaterialTabSelector.CustomCharacterCasing.Normal;
             this.tabselector_Options.Depth = 0;
             this.tabselector_Options.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.tabselector_Options.Location = new System.Drawing.Point(132, 32);
@@ -246,6 +250,7 @@ namespace MaterialSkin_TestApp
             this.tabselector_Options.TabIndex = 4;
             this.tabselector_Options.TabIndicatorHeight = 1;
             this.tabselector_Options.Text = "Options";
+            this.tabselector_Options.Click += new System.EventHandler(this.tabselector_Options_Click);
             // 
             // frmMain
             // 
