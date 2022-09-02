@@ -1,0 +1,103 @@
+﻿<Window x:Class="ticketnotes.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ticketnotes"
+        mc:Ignorable="d"
+        Title="TicketNotes" Height="450" Width="800">
+    <Grid>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="10"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="10"/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="10"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="10"/>
+        </Grid.ColumnDefinitions>
+
+
+        <!--#region Title and tabs-->
+
+        <StackPanel Grid.Row="1" Grid.Column="1" Orientation="Horizontal">
+            <TextBlock Margin="5,5,5,5">Ticket Notes</TextBlock>
+            <Button x:Name="btntabNotes" Content="Notes" Margin="5,5,5,5" Click="btntabNotes_Click"/>
+            <Button x:Name="btntabSettings" Content="Settings" Margin="5,5,5,5" Click="btntabSettings_Click"/>
+        </StackPanel>
+
+
+        <!--#endregion-->
+
+
+        <!--#region Tabcontrol and content-->
+        <TabControl x:Name="tbctrlContent" Grid.Row="2" Grid.Column="1">
+            <TabItem x:Name="tabNotes">
+                <Grid>
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <StackPanel Grid.Row="0" Grid.Column="0" Orientation="Horizontal">
+                        <TextBlock Text="Notes" HorizontalAlignment="Right" Margin="5,5,5,5"/>
+                        <Button HorizontalAlignment="Right" x:Name="btnCopyNotes" Content="Copy Notes" Click="btnCopyNotes_Click" Margin="5,5,5,5"/>
+                    </StackPanel>
+
+                    <TextBox x:Name="redtNotes" Grid.Row="1" Grid.Column="0" 
+                             TextWrapping="Wrap"
+                             AcceptsReturn="True"
+                             VerticalScrollBarVisibility="Visible" KeyUp="redtNotes_KeyUp"/>
+
+                </Grid>
+            </TabItem>
+
+            <TabItem x:Name="tabSettings">
+                <Grid>
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="4.812"/>
+                        <ColumnDefinition Width="0"/>
+                        <ColumnDefinition Width="0"/>
+                        <ColumnDefinition Width="0"/>
+                        <ColumnDefinition Width="3.748"/>
+                        <ColumnDefinition Width="116.671"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <StackPanel Margin="0,5,5,5" x:Name="spnlSettingLabels" Grid.Row="0" Grid.Column="1" Orientation="Vertical" Grid.ColumnSpan="5">
+                        <TextBlock Text="AutoHide Timeout" Margin="5,5,5,5"/>
+                        <TextBlock Text="Enable Dark Mode" Margin="5,5,5,5"/>
+                        <TextBlock Text="Prefix each line with" Margin="5,5,5,5"/>
+                    </StackPanel>
+
+                    <StackPanel Margin="5,5,5,5" x:Name="spnlSettings" Grid.Row="0" Grid.Column="6" Orientation="Vertical">
+                        <TextBox Margin="5,5,5,5"/>
+                        <CheckBox Margin="5,5,5,5"/>
+                        <TextBox x:Name="edtsettings_LinePrefix" Margin="5,5,5,5"/>
+                    </StackPanel>
+
+                </Grid>
+
+
+            </TabItem>
+
+        </TabControl>
+
+    </Grid>
+</Window>
